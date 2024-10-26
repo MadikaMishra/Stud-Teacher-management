@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Request Booking - Appointment System</title>
+</head>
+<body>
+    <header>
+        <h1>Request a Booking</h1>
+    </header>
+    
+    <div class="container">
+        <div class="teacher-info">
+            <h2>Teacher: <span id="teacherName"></span></h2>
+            <p>Fill out the form below to schedule your appointment!</p>
+        </div>
+        
+        <form id="bookingForm" class="booking-form">
+            <label for="date"><i class="fas fa-calendar-alt"></i> Select Date:</label>
+            <input type="date" id="date" required>
+
+            <label for="time"><i class="fas fa-clock"></i> Select Time:</label>
+            <input type="time" id="time" required>
+
+            <label for="message"><i class="fas fa-comment"></i> Additional Message:</label>
+            <textarea id="message" placeholder="Any specific requests..."></textarea>
+
+            
+            <button type="submit" class="btn">Submit Request</button>
+        </form>
+        
+        <div id="feedbackMessage" class="feedback"></div>
+    </div>
