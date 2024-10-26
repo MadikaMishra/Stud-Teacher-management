@@ -1,0 +1,114 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js"></script>
+    <script src="firebase-config.js"></script>
+    <title>Appointment Booking System</title>
+</head>
+<body>
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Welcome to the Student Teacher Booking System</h1>
+            <p>Connect with the best teachers and manage your appointments seamlessly.</p>
+            <a href="login.html" class="btn">Get Started</a>
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section class="features">
+        <h2>Features</h2>
+        <div class="feature-list">
+            <div class="feature-item">
+                <h3>User-Friendly Interface</h3>
+                <p>Easy navigation and an intuitive design make booking a breeze.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Secure Registration</h3>
+                <p>Your data is protected with our secure registration and login system.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Manage Appointments</h3>
+                <p>View, edit, and cancel your appointments at any time.</p>
+            </div>
+            <div class="feature-item">
+              <h3>Manage Appointments</h3>
+              <p>View, edit, and cancel your appointments at any time.</p>
+          </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <h2>What Our Users Say</h2>
+        <div class="testimonial-slider">
+            <div class="testimonial-item active">
+                <p>"This platform made it easy to find the right teacher for me!"</p>
+                <h4>- Sarah L.</h4>
+            </div>
+            <div class="testimonial-item">
+                <p>"Booking appointments has never been so simple and quick!"</p>
+                <h4>- John D.</h4>
+            </div>
+            <div class="testimonial-item">
+                <p>"I love the user-friendly interface and great support!"</p>
+                <h4>- Emily R.</h4>
+            </div>
+        </div>
+        <div class="testimonial-controls">
+            <button class="prev" onclick="changeTestimonial(-1)">&#10094;</button>
+            <button class="next" onclick="changeTestimonial(1)">&#10095;</button>
+        </div>
+    </section>
+
+    <!-- FAQs Section -->
+    <section class="faqs">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <h3>How do I register?</h3>
+            <p>Click on the "Register" button on the homepage and fill in your details.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Can I change my appointment?</h3>
+            <p>Yes, you can manage and modify your appointments in your account.</p>
+        </div>
+        <div class="faq-item">
+            <h3>What if I forget my password?</h3>
+            <p>You can reset your password using the "Forgot Password" link on the login page.</p>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact">
+        <h2>Contact Us</h2>
+        <form id="contactForm" action="submit_contact.php" method="POST">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta">
+        <h2>Ready to Book?</h2>
+        <a href="register.html" class="btn">Register Now</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Appointment Booking System. All rights reserved.</p>
+        <nav>
+            <a href="login.html">Login</a> | 
+            <a href="teachers.html">Find Teachers</a>
+        </nav>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
