@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Find Teachers - Appointment Booking System</title>
+</head>
+<body>
+    <div class="teachers-container">
+        <header>
+            <h1><i class="fas fa-chalkboard-teacher"></i> Find Your Teacher</h1>
+            <div class="search-filter">
+                <input type="text" id="searchInput" placeholder="Search by subject or location">
+                <select id="sortOptions">
+                    <option value="rating">Sort by Rating</option>
+                    <option value="availability">Sort by Availability</option>
+                </select>
+                <button id="searchButton" class="btn"><i class="fas fa-search"></i> Search</button>
+            </div>
+        </header>
+
+        <div id="teachersList" class="teachers-list">
+            <div class="teacher-card">
+                <img src="john doe.jpeg" alt="John Doe" class="teacher-image">
+                <div class="teacher-info">
+                    <h3><i class="fas fa-user"></i> John Doe</h3>
+                    <p><i class="fas fa-book-open"></i> Subject: Mathematics</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Location: New York</p>
+                    <p><i class="fas fa-star"></i> Rating: ★★★★☆</p>
+                    <p><i class="fas fa-graduation-cap"></i> Qualifications: PhD in Mathematics</p>
+                </div>
+                <button class="btn book-appointment" onclick="location.href='request-booking.html?teacher=John%20Doe'"><i class="fas fa-calendar-plus"></i> Request Appointment</button>
+            </div>
+            <div class="teacher-card">
+                <img src="john simrth.jpg" alt="Jane Smith" class="teacher-image">
+                <div class="teacher-info">
+                    <h3><i class="fas fa-user"></i> Jane Smith</h3>
+                    <p><i class="fas fa-book-open"></i> Subject: Science</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Location: Los Angeles</p>
+                    <p><i class="fas fa-star"></i> Rating: ★★★★★</p>
+                    <p><i class="fas fa-graduation-cap"></i> Qualifications: Master in Biology</p>
+                </div>
+                <button class="btn book-appointment" onclick="location.href='request-booking.html?teacher=Jane%20Smith'"><i class="fas fa-calendar-plus"></i> Request Appointment</button>
+            </div>
+            <!-- More teacher profiles can be dynamically added here -->
+        </div>
+
+        <div id="feedbackMessage" class="feedback"></div>
+    </div>
+    
+    <script>
+        // Handle search functionality
+        document.getElementById('searchButton').addEventListener('click', function() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const cards = document.querySelectorAll('.teacher-card');
+            cards.forEach(card => {
+                const name = card.querySelector('h3').innerText.toLowerCase();
+                const subject = card.querySelector('p').innerText.toLowerCase();
+                if (name.includes(query) || subject.includes(query)) {
+                    card.style.display = 'block'; // Show card
+                } else {
+                    card.style.display = 'none'; // Hide card
+                }
+            });
+        });
+    </script>
+    
+</body>
+</html>
